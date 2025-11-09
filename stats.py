@@ -13,4 +13,13 @@ def count_letters(book_contents):
 
 
 def sorted_list(letter_count):
-    print(letter_count)
+    list_to_return = []
+    for letter in letter_count:
+        list_to_return.append({"char": letter, "num": letter_count[letter]})
+
+    list_to_return.sort(reverse=True, key=sort_by)
+    return list_to_return
+
+
+def sort_by(items):
+    return items["num"]
